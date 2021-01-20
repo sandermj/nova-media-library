@@ -1,10 +1,10 @@
 <?php
 
-namespace ClassicO\NovaMediaLibrary;
+namespace sandermj\NovaMediaLibrary;
 
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
-use ClassicO\NovaMediaLibrary\Core\{
+use sandermj\NovaMediaLibrary\Core\{
 	Crop,
 	Helper,
 	Model,
