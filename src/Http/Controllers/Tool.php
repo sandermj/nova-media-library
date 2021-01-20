@@ -1,7 +1,7 @@
 <?php
 
 namespace sandermj\NovaMediaLibrary\Http\Controllers;
-
+use sandermj\NovaMediaLibrary\NovaMediaLibrary;
 use sandermj\NovaMediaLibrary\API;
 use sandermj\NovaMediaLibrary\Http\Requests\{
 	CropFr,
@@ -15,7 +15,6 @@ use sandermj\NovaMediaLibrary\Http\Requests\{
 use sandermj\NovaMediaLibrary\Core\{
 	Crop,
 	Helper,
-	Model,
 	Upload
 };
 
@@ -24,8 +23,8 @@ class Tool {
 	function get(GetFr $fr)
 	{
 		$preview = config('nova-media-library.resize.preview');
-
-		$data = (new Model)->search();
+		$Model = NovaMediaLibrary::getModelClass();
+		$data = (new $Model)->search();
 		$data['array'] = collect($data['array'])->map(function ($item) use ($preview) {
 			if ( !$item->url ) {
 				$item = $item->toArray();
@@ -41,7 +40,9 @@ class Tool {
 
 	function private()
 	{
-		$item = Model::find(request('id'));
+		$Model = NovaMediaLibrary::getModelClass();
+		
+		$item = $Model::find(request('id'));
 		$size = request('img_size');
 
 		if ( !$item or !$item->path )
@@ -87,8 +88,10 @@ class Tool {
 
 	function delete(DeleteFr $fr)
 	{
-		$get = Model::find(request('ids'));
-		$delete = Model::whereIn('id', request('ids'))->delete();
+		$Model = NovaMediaLibrary::getModelClass();
+		
+		$get = $Model::find(request('ids'));
+		$delete = $Model::whereIn('id', request('ids'))->delete();
 
 		if ( count($get) > 0 ) {
 			$array = [];
@@ -112,7 +115,9 @@ class Tool {
 
 	function update(UpdateFr $fr)
 	{
-		$item = Model::find(request('id'));
+		$Model = NovaMediaLibrary::getModelClass();
+		
+		$item = $Model::find(request('id'));
 		if ( !$item ) abort(422, __('Invalid id'));
 
 		$item->title = request('title');
