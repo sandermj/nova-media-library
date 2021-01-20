@@ -1,8 +1,8 @@
 <?php
 
-namespace ClassicO\NovaMediaLibrary\Core;
+namespace sandermj\NovaMediaLibrary\Core;
 
-use ClassicO\NovaMediaLibrary\API;
+use sandermj\NovaMediaLibrary\API;
 use Illuminate\Support\Str;
 use Intervention\Image\ImageManager;
 
