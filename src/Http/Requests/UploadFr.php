@@ -1,6 +1,6 @@
 <?php
 
-namespace ClassicO\NovaMediaLibrary\Http\Requests;
+namespace sandermj\NovaMediaLibrary\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
