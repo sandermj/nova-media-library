@@ -1,5 +1,5 @@
 {
-    "name": "classic-o/nova-media-library",
+    "name": "sandermj/nova-media-library",
     "description": "Tool and field that will let you managing files and add them to the posts",
     "keywords": ["laravel", "nova", "media", "gallery"],
     "license": "MIT",
@@ -9,13 +9,13 @@
     },
     "autoload": {
         "psr-4": {
-            "ClassicO\\NovaMediaLibrary\\": "src/"
+            "sandermj\\NovaMediaLibrary\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "ClassicO\\NovaMediaLibrary\\ToolServiceProvider"
+                "sandermj\\NovaMediaLibrary\\ToolServiceProvider"
             ]
         }
     },
