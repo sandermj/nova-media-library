@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use ClassicO\NovaMediaLibrary\Http\Controllers\Tool;
+use sandermj\NovaMediaLibrary\Http\Controllers\Tool;
 
 Route::post('/get',         Tool::class . '@get');
 Route::get( '/private',     Tool::class . '@private')->name('nml-private-file-admin');
