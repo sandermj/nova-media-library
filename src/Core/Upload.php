@@ -4,6 +4,8 @@ namespace sandermj\NovaMediaLibrary\Core;
 
 use Illuminate\Support\Str;
 
+use sandermj\NovaMediaLibrary\NovaMediaLibrary;
+
 class Upload {
 
 	var $title;
@@ -105,6 +107,8 @@ class Upload {
 
 	function save()
 	{
+		
+		$Model = NovaMediaLibrary::getModelClass();
 		if (
 			Helper::storage()->put(
 				Helper::folder($this->folder . $this->name),
@@ -112,7 +116,7 @@ class Upload {
 				Helper::visibility($this->private)
 			)
 		) {
-			return Model::create([
+			return $Model::create([
 				'title' => $this->title,
 				'created' => now(),
 				'type' => $this->type,
