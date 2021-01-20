@@ -1,7 +1,7 @@
 <?php
 
 namespace sandermj\NovaMediaLibrary\Core;
-
+use sandermj\NovaMediaLibrary\NovaMediaLibrary;
 use sandermj\NovaMediaLibrary\API;
 use Illuminate\Support\Str;
 use Intervention\Image\ImageManager;
@@ -20,7 +20,9 @@ class Crop {
 		if ( !$this->config['front_crop'] or !class_exists('\Intervention\Image\ImageManager')) return;
 
 		$this->form = $form;
-		$this->image = Model::findOrFail($this->form['id'])->toArray();
+		$Model = NovaMediaLibrary::getModelClass();
+		
+		$this->image = $Model::findOrFail($this->form['id'])->toArray();
 	}
 
 	function make()
@@ -43,6 +45,7 @@ class Crop {
 
 	function save()
 	{
+		$Model = NovaMediaLibrary::getModelClass();
 		$this->image['created'] = now();
 
 		if ( 0 === $this->form['over'] ) {
@@ -62,12 +65,12 @@ class Crop {
 			)
 		) {
 			if ( 1 === $this->form['over'] ) {
-				$item = Model::find($this->form['id']);
+				$item = $Model::find($this->form['id']);
 				$item->update($this->image);
 				self::createSizes($item);
 				return $item;
 			} else {
-				$item = Model::create($this->image);
+				$item = $Model::create($this->image);
 				self::createSizes($item);
 				return $item;
 			}
