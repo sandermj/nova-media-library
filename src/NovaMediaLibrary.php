@@ -74,7 +74,7 @@ class NovaMediaLibrary extends Tool
 		return is_object($json) ? $json : [];
 	}
 	
-	public function getModelClass() {
+	public static function getModelClass() {
 		return config('nova-media-library.model', \sandermj\NovaMediaLibrary\Core\Model::class);
 
 	}
