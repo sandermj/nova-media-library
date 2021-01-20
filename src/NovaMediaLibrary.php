@@ -73,4 +73,10 @@ class NovaMediaLibrary extends Tool
 		$json = json_decode(file_get_contents($file));
 		return is_object($json) ? $json : [];
 	}
+	
+	public function getModelClass() {
+		return config('nova-media-library.model', \sandermj\NovaMediaLibrary\Core\Model::class);
+
+	}
+		
 }
