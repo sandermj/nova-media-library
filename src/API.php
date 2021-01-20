@@ -4,10 +4,10 @@ namespace sandermj\NovaMediaLibrary;
 
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
+use MediaLibrary;
 use sandermj\NovaMediaLibrary\Core\{
 	Crop,
 	Helper,
-	Model,
 	Upload
 };
 
@@ -68,7 +68,8 @@ class API {
 	 */
 	static function getFiles($ids, $imgSize = null, $object = false)
 	{
-		$items = Model::find(is_array($ids) ? $ids : [$ids]);
+		$Model = MediaLibrary::getModelClass();
+		$items = $Model::find(is_array($ids) ? $ids : [$ids]);
 
 		if ( !$items )
 			return is_array($ids) ? [] : null;
