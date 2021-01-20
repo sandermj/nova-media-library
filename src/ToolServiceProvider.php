@@ -1,10 +1,10 @@
 <?php
 
-namespace ClassicO\NovaMediaLibrary;
+namespace sandermj\NovaMediaLibrary;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use ClassicO\NovaMediaLibrary\Http\Middleware\Authorize;
+use sandermj\NovaMediaLibrary\Http\Middleware\Authorize;
 
 class ToolServiceProvider extends ServiceProvider
 {
