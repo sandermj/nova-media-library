@@ -28,7 +28,8 @@ class MediaLibrary extends Field
 
 	    $value = $this->value;
 	    $this->value = null;
-	    $data = Core\Model::find($value);
+	    $Model = NovaMediaLibrary::getModelClass();		
+	    $data = $Model::find($value);
 
 	    if ( is_array($value) ) {
 	    	if ( !count($data) ) return $this->value = null;
