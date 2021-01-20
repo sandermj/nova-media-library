@@ -1,8 +1,8 @@
 <?php
 
-namespace ClassicO\NovaMediaLibrary;
+namespace sandermj\NovaMediaLibrary;
 
-use ClassicO\NovaMediaLibrary\Core\Helper;
+use sandermj\NovaMediaLibrary\Core\Helper;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
 
