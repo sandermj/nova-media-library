@@ -1,6 +1,6 @@
 <?php
 
-namespace ClassicO\NovaMediaLibrary\Core;
+namespace sandermj\NovaMediaLibrary\Core;
 
 use Illuminate\Support\Str;
 
