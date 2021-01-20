@@ -1,9 +1,9 @@
 <?php
 
-namespace ClassicO\NovaMediaLibrary\Http\Middleware;
+namespace sandermj\NovaMediaLibrary\Http\Middleware;
 
 use Laravel\Nova\Nova;
-use ClassicO\NovaMediaLibrary\NovaMediaLibrary;
+use sandermj\NovaMediaLibrary\NovaMediaLibrary;
 
 class Authorize
 {
