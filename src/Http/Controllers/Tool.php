@@ -1,9 +1,9 @@
 <?php
 
-namespace ClassicO\NovaMediaLibrary\Http\Controllers;
+namespace sandermj\NovaMediaLibrary\Http\Controllers;
 
-use ClassicO\NovaMediaLibrary\API;
-use ClassicO\NovaMediaLibrary\Http\Requests\{
+use sandermj\NovaMediaLibrary\API;
+use sandermj\NovaMediaLibrary\Http\Requests\{
 	CropFr,
 	DeleteFr,
 	GetFr,
@@ -12,7 +12,7 @@ use ClassicO\NovaMediaLibrary\Http\Requests\{
 	FolderNewFr,
 	FolderDelFr,
 };
-use ClassicO\NovaMediaLibrary\Core\{
+use sandermj\NovaMediaLibrary\Core\{
 	Crop,
 	Helper,
 	Model,
